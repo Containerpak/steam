@@ -6,7 +6,7 @@
   "binaries": ["/usr/bin/steam"],
   "desktop_entries": ["/usr/share/applications/steam.desktop"],
   "dependencies": [],
-  "future_dependencies": [],
+  "addons": [],
   "idle_time": 0,
   "override": {
     "socketX11": true,
