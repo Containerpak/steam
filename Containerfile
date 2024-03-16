@@ -4,6 +4,7 @@ RUN apt install -y \
   wget \
   pciutils \
   lsof \
+  libc6 \
   mangohud && \
   wget https://repo.steampowered.com/steam/archive/precise/steam_latest.deb && \
   dpkg -i steam_latest.deb || true && \
