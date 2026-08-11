@@ -1,14 +1,14 @@
-FROM ghcr.io/containerpak/mesa:main
+FROM ubuntu:26.04 AS source
 
-RUN apt install -y \
-  wget \
-  pciutils \
-  lsof \
-  libc6 \
-  mangohud && \
-  wget https://repo.steampowered.com/steam/archive/precise/steam_latest.deb && \
-  dpkg -i steam_latest.deb || true && \
-  apt install -f -y && \
-  rm -f steam_latest.deb && \
-  apt remove -y wget && \
-  /usr/bin/cpak-clean-junk
+ADD --checksum=sha256:765aba9a0ed339a50226ceb614fcc9879a991ba184098bc8de920efb12c714a4 \
+    https://repo.steampowered.com/steam/pool/steam/s/steam/steam-launcher_1.0.0.87_amd64.deb \
+    /tmp/steam.deb
+
+FROM ghcr.io/containerpak/wine:main
+
+COPY --from=source /tmp/steam.deb /tmp/steam.deb
+
+RUN apt update && \
+    apt install -y --no-install-recommends /tmp/steam.deb lsof mangohud pciutils && \
+    rm /tmp/steam.deb && \
+    cpak-clean-junk
