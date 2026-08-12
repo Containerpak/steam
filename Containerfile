@@ -9,6 +9,6 @@ FROM ghcr.io/containerpak/wine:main
 COPY --from=source /tmp/steam.deb /tmp/steam.deb
 
 RUN apt update && \
-    apt install -y --no-install-recommends /tmp/steam.deb lsof mangohud pciutils && \
+    apt install -y --no-install-recommends /tmp/steam.deb lsof mangohud pciutils pulseaudio-utils && \
     rm /tmp/steam.deb && \
     cpak-clean-junk
