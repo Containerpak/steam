@@ -6,9 +6,7 @@ ADD --checksum=sha256:765aba9a0ed339a50226ceb614fcc9879a991ba184098bc8de920efb12
 
 FROM ghcr.io/containerpak/wine:main
 
-COPY --from=source /tmp/steam.deb /tmp/steam.deb
-
-RUN apt update && \
-    apt install -y --no-install-recommends /tmp/steam.deb lsof mangohud pciutils pulseaudio-utils && \
-    rm /tmp/steam.deb && \
+RUN --mount=type=bind,from=source,source=/tmp/steam.deb,target=/run/steam.deb \
+    apt update && \
+    apt install -y --no-install-recommends /run/steam.deb lsof mangohud pciutils pulseaudio-utils && \
     cpak-clean-junk
