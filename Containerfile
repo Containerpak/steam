@@ -8,5 +8,5 @@ FROM ghcr.io/containerpak/wine:main
 
 RUN --mount=type=bind,from=source,source=/tmp/steam.deb,target=/run/steam.deb \
     apt update && \
-    apt install -y --no-install-recommends /run/steam.deb lsof mangohud pciutils pulseaudio-utils && \
+    apt install -y --no-install-recommends /run/steam.deb lsof pciutils pulseaudio-utils && \
     cpak-clean-junk

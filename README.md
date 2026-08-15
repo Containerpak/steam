@@ -14,3 +14,16 @@ Start it from its icon in the application menu or by running:
 cpak run github.com/containerpak/steam steam
 ```
 
+## Optional addons
+
+Steam supports optional cpak addons for MangoHud, Gamescope, GameMode,
+GE-Proton and ProtoSoda. For example:
+
+```bash
+cpak addon enable github.com/containerpak/steam github.com/containerpak/mangohud
+cpak addon enable github.com/containerpak/steam github.com/containerpak/protosoda
+```
+
+Use `mangohud %command%`, `gamescope -- %command%` or
+`gamemoderun %command%` in a game's launch options. Compatibility tools appear
+in Steam after restarting the client.

@@ -8,7 +8,13 @@
   "binaries": ["/usr/bin/steam"],
   "desktop_entries": ["/usr/share/applications/steam.desktop"],
   "dependencies": [],
-  "addons": [],
+  "addons": [
+    "github.com/containerpak/gamemode",
+    "github.com/containerpak/gamescope",
+    "github.com/containerpak/mangohud",
+    "github.com/containerpak/proton-ge",
+    "github.com/containerpak/protosoda"
+  ],
   "idle_time": 0,
   "override": {
     "socketX11": true,
@@ -35,7 +41,9 @@
     "filesystem": [
       {"path": "home", "access": "read-write"}
     ],
-    "env": [],
+    "env": [
+      "STEAM_EXTRA_COMPAT_TOOLS_PATHS=/usr/share/steam/compatibilitytools.d"
+    ],
     "network": true,
     "process": false,
     "userNamespaces": true,
