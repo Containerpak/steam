@@ -41,9 +41,7 @@
     "filesystem": [
       {"path": "home", "access": "read-write"}
     ],
-    "env": [
-      "STEAM_EXTRA_COMPAT_TOOLS_PATHS=/usr/share/steam/compatibilitytools.d"
-    ],
+    "env": [],
     "network": true,
     "process": false,
     "userNamespaces": true,

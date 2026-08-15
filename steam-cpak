@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -n "${CPAK_ROOTFS:-}" ]; then
+    export PATH="$CPAK_ROOTFS/usr/bin:$CPAK_ROOTFS/usr/games:$PATH"
+    export STEAM_EXTRA_COMPAT_TOOLS_PATHS="$CPAK_ROOTFS/usr/share/steam/compatibilitytools.d${STEAM_EXTRA_COMPAT_TOOLS_PATHS:+:$STEAM_EXTRA_COMPAT_TOOLS_PATHS}"
+    export VK_ADD_LAYER_PATH="$CPAK_ROOTFS/usr/share/vulkan/implicit_layer.d${VK_ADD_LAYER_PATH:+:$VK_ADD_LAYER_PATH}"
+    export PRESSURE_VESSEL_FILESYSTEMS_RO="$CPAK_ROOTFS/usr${PRESSURE_VESSEL_FILESYSTEMS_RO:+:$PRESSURE_VESSEL_FILESYSTEMS_RO}"
+fi
+
+exec /usr/lib/steam/bin_steam.sh "$@"

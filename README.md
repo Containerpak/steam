@@ -26,4 +26,6 @@ cpak addon enable github.com/containerpak/steam github.com/containerpak/protosod
 
 Use `mangohud %command%`, `gamescope -- %command%` or
 `gamemoderun %command%` in a game's launch options. Compatibility tools appear
-in Steam after restarting the client.
+in Steam after restarting the client. Steam keeps nested addon paths available
+when a game enters pressure-vessel, without copying addon files into the user's
+Steam directory.
