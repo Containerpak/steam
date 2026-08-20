@@ -11,7 +11,7 @@ cpak install github.com/containerpak/steam
 Start it from its icon in the application menu or by running:
 
 ```bash
-cpak run github.com/containerpak/steam steam
+cpak run github.com/containerpak/steam steam-cpak
 ```
 
 ## Optional addons

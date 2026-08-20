@@ -5,8 +5,9 @@
   "description": "Install, update and play games from Steam.",
   "version": "1.0.0.87",
   "image": "ghcr.io/containerpak/steam:main",
-  "binaries": ["/usr/bin/steam"],
-  "desktop_entries": ["/usr/share/applications/steam.desktop"],
+  "runtime_sources": [{"name": "steam-launcher_1.0.0.87_amd64.deb", "url": "https://repo.steampowered.com/steam/pool/steam/s/steam/steam-launcher_1.0.0.87_amd64.deb", "sha256": "765aba9a0ed339a50226ceb614fcc9879a991ba184098bc8de920efb12c714a4", "size": 20379390, "installer": "dpkg"}],
+  "binaries": ["/usr/local/bin/steam-cpak"],
+  "desktop_entries": ["/usr/share/applications/steam-cpak.desktop"],
   "dependencies": [],
   "addons": [
     "github.com/containerpak/gamemode",
