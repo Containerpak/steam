@@ -1,13 +1,25 @@
 {
-  "$schema": "https://raw.githubusercontent.com/Containerpak/cpak/v2/schema/manifest-v2.json",
-  "manifest_version": "2.0",
+  "$schema": "https://raw.githubusercontent.com/Containerpak/cpak/v2/schema/manifest-v3.json",
+  "manifest_version": "3.0",
   "name": "Steam",
   "description": "Install, update and play games from Steam.",
   "version": "1.0.0.87",
-  "image": "ghcr.io/containerpak/steam:main",
-  "runtime_sources": [{"name": "steam-launcher_1.0.0.87_amd64.deb", "url": "https://repo.steampowered.com/steam/pool/steam/s/steam/steam-launcher_1.0.0.87_amd64.deb", "sha256": "765aba9a0ed339a50226ceb614fcc9879a991ba184098bc8de920efb12c714a4", "size": 20379390, "installer": "dpkg"}],
-  "binaries": ["/usr/local/bin/steam-cpak"],
-  "desktop_entries": ["/usr/share/applications/steam-cpak.desktop"],
+  "image": "ghcr.io/containerpak/steam@sha256:ebc5c0968628105a69b8fea1a6a7b9745e01d8155746c580ed17fc4c70e37096",
+  "runtime_sources": [
+    {
+      "name": "steam-launcher_1.0.0.87_amd64.deb",
+      "url": "https://repo.steampowered.com/steam/pool/steam/s/steam/steam-launcher_1.0.0.87_amd64.deb",
+      "sha256": "765aba9a0ed339a50226ceb614fcc9879a991ba184098bc8de920efb12c714a4",
+      "size": 20379390,
+      "installer": "dpkg"
+    }
+  ],
+  "binaries": [
+    "/usr/local/bin/steam-cpak"
+  ],
+  "desktop_entries": [
+    "/usr/share/applications/steam-cpak.desktop"
+  ],
   "dependencies": [],
   "addons": [
     "github.com/containerpak/gamemode",
@@ -18,16 +30,11 @@
   ],
   "idle_time": 0,
   "override": {
-    "socketX11": true,
     "socketWayland": true,
     "socketPulseAudio": true,
-    "socketSessionBus": true,
-    "socketSystemBus": false,
     "socketSshAgent": false,
     "socketCups": false,
     "socketGpgAgent": false,
-    "socketAtSpiBus": true,
-    "socketBluetooth": true,
     "deviceDri": true,
     "deviceKvm": false,
     "deviceShm": true,
@@ -40,7 +47,10 @@
     "notification": true,
     "openURI": true,
     "filesystem": [
-      {"path": "home", "access": "read-write"}
+      {
+        "path": "home",
+        "access": "read-write"
+      }
     ],
     "env": [],
     "network": true,
@@ -49,7 +59,6 @@
     "memoryMaxMB": 0,
     "cpuQuota": 0,
     "pidsMax": 0,
-    "asRoot": false,
-    "allowedHostCommands": []
+    "asRoot": false
   }
 }
