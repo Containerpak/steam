@@ -52,6 +52,11 @@
     "notification": true,
     "openURI": true,
     "hostApplications": false,
+    "sessionBus": {
+      "own": [
+        "com.steampowered.PressureVessel.*"
+      ]
+    },
     "filesystem": [
       {
         "path": "home",
