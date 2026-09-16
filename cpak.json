@@ -24,6 +24,7 @@
   "addons": [
     "github.com/containerpak/gamemode",
     "github.com/containerpak/gamescope",
+    "github.com/containerpak/lepton",
     "github.com/containerpak/mangohud",
     "github.com/containerpak/proton-ge",
     "github.com/containerpak/protosoda"
