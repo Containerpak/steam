@@ -4,7 +4,7 @@
   "name": "Steam",
   "description": "Install, update and play games from Steam.",
   "version": "1.0.0.87",
-  "image": "ghcr.io/containerpak/steam@sha256:a29b6ad1129c2369e310d2da9bc45d289c8d0f4e7275578dcc0ea57069468727",
+  "image": "ghcr.io/containerpak/steam@sha256:60dff40614451f5047f4fc41fd92c808d54f09bf4e3fec0599e9d5abfef8c846",
   "runtime_sources": [
     {
       "name": "steam-launcher_1.0.0.87_amd64.deb",
